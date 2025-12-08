@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel | Chase’s Website</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <style>
+        /* Page-specific tweaks; you can move these into style.css later */
+        #leaflet-map {
+            height: 520px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            margin: 24px 0;
+        }
+
+        .legend {
+            font-size: 14px;
+            color: #6e6e73;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <div class="brand">Chase</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="music.html">Music</a>
+                <a href="travel.html">Travel</a>
+                <a href="movies.html">Movies</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Places I’ve been</h1>
+        <p class="legend">Tip: pinch to zoom on mobile; click a pin for details.</p>
+        <div id="leaflet-map" role="region" aria-label="World map of places I’ve visited"></div>
+    </main>
+
+    <footer>
+        <div class="container">© 2025 Chase</div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        // Edit this list with your actual trips (lat, lon)
+        const places = [
+            { name: "Auckland, New Zealand", lat: -36.8485, lon: 174.7633 },
+            { name: "Beijing, China", lat: 39.9042, lon: 116.4074 },
+            { name: "Melbourne, Australia", lat: -37.8136, lon: 144.9631 },
+            { name: "Suva, Fiji", lat: -18.1416, lon: 178.4419 },
+            { name: "Ankara, Türkiye", lat: 39.9334, lon: 32.8597 }
+        ];
+
+        // Create the map
+        const map = L.map('leaflet-map', {
+            scrollWheelZoom: false,   // nicer UX on desktop pages
+            worldCopyJump: true       // wrap-around world panning
+        }).setView([12, 10], 2);    // starting view
+
+        // Base tiles (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Accent color to match your site
+        const ACCENT = '#0071e3';
+
+        // Add markers
+        const group = L.featureGroup().addTo(map);
+        places.forEach(p => {
+            const marker = L.circleMarker([p.lat, p.lon], {
+                radius: 6,
+                color: ACCENT,
+                weight: 2,
+                opacity: 1,
+                fillColor: ACCENT,
+                fillOpacity: 0.85
+            })
+                .bindPopup(`<strong>${p.name}</strong>`)
+                .addTo(group);
+        });
+
+        // Fit view to show all markers (with padding)
+        if (places.length > 0) {
+            map.fitBounds(group.getBounds(), { padding: [30, 30] });
+        }
+
+        // Keyboard accessibility: open popup on focus via tabbing
+        map.eachLayer(l => {
+            if (l instanceof L.CircleMarker) {
+                l.on('keypress', e => { if (e.originalEvent.key === 'Enter') l.openPopup(); });
+            }
+        });
+
+        // Optional: enable scroll zoom after user clicks the map
+        map.on('click', () => map.scrollWheelZoom.enable());
+    </script>
+</body>
+
+</html>
