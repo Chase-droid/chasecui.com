@@ -156,14 +156,15 @@ iframe {
 }
 
 .avatar {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
-    flex: 0 0 auto;
-    position: relative;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-color: #222;
+    margin-bottom: 6px;
 }
+
 
 .avatar.has-img::before {
     content: "";
@@ -275,6 +276,13 @@ iframe {
 
 .recommend:hover {
     background: rgba(255, 255, 255, 0.08);
+}
+
+#recommendForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 让所有 input/textarea/button 保持居中对齐 */
 }
 
 input,
