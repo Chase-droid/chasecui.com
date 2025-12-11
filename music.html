@@ -153,15 +153,21 @@
     </section>
 
     <section class="recommend">
-        <h2>Leave Your Recommendation</h2>
-        <p>Suggest me a song or artist to check out!</p>
+        <h2>Recommend a Song</h2>
+        <p>Share a song with me — I might add it to my playlist.</p>
+
         <form id="recommendForm">
-            <input type="text" id="name" placeholder="Your name (optional)" />
-            <textarea id="recommendation" placeholder="Your music recommendation..." rows="3"></textarea>
-            <button type="submit">Send</button>
+            <input type="text" id="name" name="name" placeholder="Your name (optional)">
+            <input type="text" id="song" name="song" placeholder="Song title *" required>
+            <input type="text" id="artist" name="artist" placeholder="Artist (optional)">
+            <textarea id="message" name="message" placeholder="Why this song? (optional)"></textarea>
+
+            <button type="submit" id="recommendSubmit">Send Recommendation</button>
         </form>
-        <p id="thanksMsg" class="result"></p>
+
+        <p id="recommendResult"></p>
     </section>
+
 
     <footer>
         <p>© 2025 Chase Cui | Made with ❤️ and good music</p>
@@ -296,13 +302,57 @@
         });
 
         // Recommendation interaction
-        const form = document.getElementById("recommendForm");
-        const thanks = document.getElementById("thanksMsg");
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            form.reset();
-            thanks.textContent = "Thanks for your recommendation! 🎵";
-            thanks.classList.add("fade-in");
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("recommendForm");
+            const result = document.getElementById("recommendResult");
+            const submitBtn = document.getElementById("recommendSubmit");
+
+            if (!form) return;
+
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                const payload = {
+                    name: document.getElementById("name").value.trim(),
+                    song: document.getElementById("song").value.trim(),
+                    artist: document.getElementById("artist").value.trim(),
+                    message: document.getElementById("message").value.trim(),
+                };
+
+                if (!payload.song) {
+                    result.textContent = "Song title is required.";
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                result.textContent = "Submitting...";
+
+                try {
+                    const response = await fetch("https://ok2h8dvk9d.execute-api.ap-southeast-6.amazonaws.com/prod/recommendations", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(payload),
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.success) {
+                        result.textContent = "Thank you! Your recommendation has been saved.";
+                        form.reset();
+                    } else {
+                        console.error("API error:", data);
+                        result.textContent = data.error || "Something went wrong, please try again.";
+                    }
+                } catch (err) {
+                    console.error("Network error:", err);
+                    result.textContent = "Network error, please try again later.";
+                } finally {
+                    submitBtn.disabled = false;
+                }
+
+            });
         });
 
 
