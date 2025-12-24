@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books | Chase Cui</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<!-- books 页面：触发窄版布局 -->
+
+<body class="books-page">
+    <header class="nav">
+        <a class="brand" href="index.html#top">Chase</a>
+        <nav class="menu">
+            <a href="music.html">Music</a>
+            <a href="movies.html">Movies</a>
+            <a href="tv.html">TV</a>
+            <a href="books.html">Books</a>
+            <a href="travels.html">Travels</a>
+            <a href="career.html">Career</a>
+        </nav>
+        <a class="contact-btn" href="contact.html">Contact</a>
+    </header>
+
+    <div class="content-wrapper">
+
+        <!-- Hero 区：Books 页面介绍 -->
+        <section class="hero">
+            <h1>Books</h1>
+            <p>
+                A quiet corner for novels, essays and non-fiction that stayed with me longer than my screen time.
+            </p>
+        </section>
+
+        <!-- Section 1：Currently Reading -->
+        <section class="content-section" id="currently-reading">
+            <h2>Currently Reading</h2>
+            <p>
+                Books that are open on my bedside table, in my backpack, or half-highlighted on my Kindle.
+            </p>
+
+            <div class="grid-cards">
+                <!-- 示例卡片：之后可以改成真实封面图 -->
+                <article class="card">
+                    <img class="card__img" src="images/book-placeholder-1.jpg" alt="Book cover 1">
+                    <div class="card__body">
+                        <h3 class="card__title">Book Title One</h3>
+                        <p class="card__meta">Author Name · Non-fiction</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="images/book-placeholder-2.jpg" alt="Book cover 2">
+                    <div class="card__body">
+                        <h3 class="card__title">Book Title Two</h3>
+                        <p class="card__meta">Author Name · Novel</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="images/book-placeholder-3.jpg" alt="Book cover 3">
+                    <div class="card__body">
+                        <h3 class="card__title">Book Title Three</h3>
+                        <p class="card__meta">Author Name · Essays</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2：Favorites -->
+        <section class="content-section" id="favorite-books">
+            <h2>Favorites</h2>
+            <p>
+                Books that changed my mood, my taste, or the way I look at certain things – big or small.
+            </p>
+
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Comfort Read</h3>
+                        <p class="card__meta">
+                            A book I can open at any chapter and instantly feel calmer, even if I’ve read it before.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Beautiful Writing</h3>
+                        <p class="card__meta">
+                            Lines I want to underline, screenshot, and send to friends who read.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Thought-provoking</h3>
+                        <p class="card__meta">
+                            Non-fiction that made me pause, rethink, or see a topic from a different angle.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Emotional Damage (in a good way)</h3>
+                        <p class="card__meta">
+                            The kind of story that quietly stays in the back of my mind for weeks after finishing it.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 3：To-read list -->
+        <section class="content-section" id="to-read">
+            <h2>To-read List</h2>
+            <p>
+                Books waiting on my shelf, my Kindle, or in my screenshots folder, patiently judging me.
+            </p>
+
+            <ul class="pill-links">
+                <li><a href="#">To-read title #1</a></li>
+                <li><a href="#">To-read title #2</a></li>
+                <li><a href="#">To-read title #3</a></li>
+                <li><a href="#">To-read title #4</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 4：Book Recommendations -->
+        <section class="content-section" id="book-recommend">
+            <div class="recommend">
+                <h2>Recommend a book to me</h2>
+                <p>
+                    If there’s a book you think would fit my taste, I’d love to hear about it.
+                </p>
+
+                <form id="recommendForm">
+                    <input type="text" name="name" placeholder="Your name (optional)" />
+                    <input type="text" name="book" placeholder="Book title (required)" required />
+                    <textarea name="reason" placeholder="Why do you think I'd like it?"></textarea>
+                    <button type="submit">Send recommendation</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies | Chase Cui</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<!-- movies 页面：使用 movies-page 触发布局样式 -->
+
+<body class="movies-page">
+    <header class="nav">
+        <!-- 品牌区，返回首页 -->
+        <a class="brand" href="index.html#top">Chase</a>
+        <nav class="menu">
+            <a href="music.html">Music</a>
+            <a href="movies.html">Movies</a>
+            <a href="tv.html">TV</a>
+            <a href="books.html">Books</a>
+            <a href="travels.html">Travels</a>
+            <a href="career.html">Career</a>
+        </nav>
+        <a class="contact-btn" href="contact.html">Contact</a>
+    </header>
+
+    <!-- 主内容外层容器：所有内容放在这里 -->
+    <div class="content-wrapper">
+
+        <!-- Hero 区：一句话描述你的电影页面 -->
+        <section class="hero">
+            <h1>Movies</h1>
+            <p>
+                A small archive of films that stayed with me – comfort movies, visual obsessions,
+                and stories I keep coming back to.
+            </p>
+        </section>
+
+        <!-- Section 1：Recently Watched -->
+        <section class="content-section" id="recent-movies">
+            <h2>Recently Watched</h2>
+            <p>
+                A few films I watched or rewatched recently and can still remember specific scenes or lines from.
+            </p>
+
+            <div class="grid-cards recent-grid">
+                <!-- 下面四个卡片都是示例，占位用，之后可以改成你自己的电影 -->
+
+                <article class="card">
+                    <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                        <img class="card__img" src="images/movie-placeholder-1.jpg" alt="Movie poster 1">
+                        <div class="card__body">
+                            <h3 class="card__title">Movie Title One</h3>
+                            <p class="card__meta">2024 · Director Name · Drama</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                        <img class="card__img" src="images/movie-placeholder-2.jpg" alt="Movie poster 2">
+                        <div class="card__body">
+                            <h3 class="card__title">Movie Title Two</h3>
+                            <p class="card__meta">2023 · Director Name · Romance</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                        <img class="card__img" src="images/movie-placeholder-3.jpg" alt="Movie poster 3">
+                        <div class="card__body">
+                            <h3 class="card__title">Movie Title Three</h3>
+                            <p class="card__meta">2019 · Director Name · Thriller</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">
+                        <img class="card__img" src="images/movie-placeholder-4.jpg" alt="Movie poster 4">
+                        <div class="card__body">
+                            <h3 class="card__title">Movie Title Four</h3>
+                            <p class="card__meta">2021 · Director Name · Sci-Fi</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2：All-time Favorites -->
+        <section class="content-section" id="favorites">
+            <h2>All-time Favorites</h2>
+            <p>
+                These are the films that feel like home – the ones I quote randomly, recommend to friends,
+                and never get tired of.
+            </p>
+
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Comfort Film</h3>
+                        <p class="card__meta">
+                            The kind of movie I put on when I want something familiar, warm and a little bit nostalgic.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Visual Obsession</h3>
+                        <p class="card__meta">
+                            Stunning cinematography, sound and pacing – a film I sometimes watch just for how it looks.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Plot Twist Classic</h3>
+                        <p class="card__meta">
+                            The kind of story that makes me rethink the whole film in the last ten minutes.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Feel-good Ending</h3>
+                        <p class="card__meta">
+                            Bittersweet but hopeful – the perfect film to end a long day on a softer note.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 3：Watchlist（想看的片单，用胶囊标签） -->
+        <section class="content-section" id="watchlist">
+            <h2>Watchlist</h2>
+            <p>
+                Films sitting on my radar or in my streaming watchlists. Future comfort movies, maybe.
+            </p>
+
+            <ul class="pill-links">
+                <li><a href="#">Watchlist title #1</a></li>
+                <li><a href="#">Watchlist title #2</a></li>
+                <li><a href="#">Watchlist title #3</a></li>
+                <li><a href="#">Watchlist title #4</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 4：让别人推荐电影，复用 recommend 样式 -->
+        <section class="content-section" id="movie-recommend">
+            <div class="recommend">
+                <h2>Recommend a film to me</h2>
+                <p>
+                    If there is a movie you think I would absolutely love, feel free to send it to me here.
+                </p>
+
+                <form id="recommendForm">
+                    <input type="text" name="name" placeholder="Your name (optional)" />
+                    <input type="text" name="movie" placeholder="Movie title (required)" required />
+                    <textarea name="reason" placeholder="Why do you think I'd like it?"></textarea>
+                    <button type="submit">Send recommendation</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

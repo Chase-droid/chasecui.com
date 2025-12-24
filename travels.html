@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travels | Chase Cui</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<!-- travels 页面：触发窄版布局 -->
+
+<body class="travels-page">
+    <header class="nav">
+        <a class="brand" href="index.html#top">Chase</a>
+        <nav class="menu">
+            <a href="music.html">Music</a>
+            <a href="movies.html">Movies</a>
+            <a href="tv.html">TV</a>
+            <a href="books.html">Books</a>
+            <a href="travels.html">Travels</a>
+            <a href="career.html">Career</a>
+        </nav>
+        <a class="contact-btn" href="contact.html">Contact</a>
+    </header>
+
+    <div class="content-wrapper">
+
+        <!-- Hero 区：页面介绍 -->
+        <section class="hero">
+            <h1>Travels</h1>
+            <p>
+                Places I’ve been, places I want to revisit, and places I still dream of seeing.
+                A small record of trips, memories and little moments on the way.
+            </p>
+        </section>
+
+        <!-- Section 1: Recent Trips -->
+        <section class="content-section" id="recent-trips">
+            <h2>Recent Trips</h2>
+            <p>My latest destinations — weekend escapes, long flights, and everything in between.</p>
+
+            <div class="grid-cards">
+                <!-- 示例卡片，可换成你自己的国家/城市照片 -->
+                <article class="card">
+                    <img class="card__img" src="images/travel-placeholder-1.jpg" alt="Destination photo">
+                    <div class="card__body">
+                        <h3 class="card__title">Melbourne</h3>
+                        <p class="card__meta">December 2025 · Concert trip</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="images/travel-placeholder-2.jpg" alt="Destination photo">
+                    <div class="card__body">
+                        <h3 class="card__title">Fiji</h3>
+                        <p class="card__meta">Upcoming · Summer Holiday</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="images/travel-placeholder-3.jpg" alt="Destination photo">
+                    <div class="card__body">
+                        <h3 class="card__title">New York</h3>
+                        <p class="card__meta">Coming Soon · Dream destination</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2: Travel Timeline / personal highlights -->
+        <section class="content-section" id="travel-highlights">
+            <h2>Travel Highlights</h2>
+            <p>
+                A few memorable places and moments — not full travel guides, just snapshots of what stayed with me.
+            </p>
+
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Beach Sunsets</h3>
+                        <p class="card__meta">
+                            The warm, slow evenings that make you forget everything else.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">City Walks</h3>
+                        <p class="card__meta">
+                            Wandering with no map — just streets, cafés, and whatever feels right.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Solo Trips</h3>
+                        <p class="card__meta">
+                            Learning the city at your own pace, in your own silence.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Airplane Windows</h3>
+                        <p class="card__meta">
+                            The small routine of takeoff, playlists, and staring at the sky.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 3: Countries / Cities visited -->
+        <section class="content-section" id="visited">
+            <h2>Places I’ve visited</h2>
+            <p>Not a full list yet — just a growing collection of places I’ve stepped in.</p>
+
+            <ul class="pill-links">
+                <li><a href="#">New Zealand</a></li>
+                <li><a href="#">Australia</a></li>
+                <li><a href="#">Turkey</a></li>
+                <li><a href="#">China (many cities)</a></li>
+                <li><a href="#">Japan</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 4: Travel Wishlist -->
+        <section class="content-section" id="wishlist">
+            <h2>Travel Wishlist</h2>
+            <p>Places I hope to visit in the next few years.</p>
+
+            <ul class="pill-links">
+                <li><a href="#">Seoul</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Los Angeles</a></li>
+                <li><a href="#">Hawaii</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 5: Let others recommend destinations -->
+        <section class="content-section" id="travel-recommend">
+            <div class="recommend">
+                <h2>Recommend a place to me</h2>
+                <p>
+                    If you have a city, a café, a hidden beach or a must-see spot in mind,
+                    feel free to send it my way.
+                </p>
+
+                <form id="recommendForm">
+                    <input type="text" name="name" placeholder="Your name (optional)" />
+                    <input type="text" name="place" placeholder="Place name (required)" required />
+                    <textarea name="reason" placeholder="What makes it special?"></textarea>
+                    <button type="submit">Send recommendation</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

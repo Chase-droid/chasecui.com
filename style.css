@@ -479,32 +479,6 @@ footer {
     padding: 80px 20px 40px;
 }
 
-.hero h1 {
-    font-size: 2.8em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.1em;
-    color: #aaa;
-}
-
-section {
-    max-width: 980px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-iframe {
-    width: 100%;
-    border: none;
-    margin-top: 10px;
-}
 
 /* Quiz cards */
 .quiz .q-block {
@@ -721,4 +695,86 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background: #18a34a;
+}
+
+/* =========================================================
+   UNIVERSAL PAGE LAYOUT FIX
+   首页（home-page）继续使用原来的全屏布局
+   其他页面使用窄版居中布局（避免被全局设置拉宽）
+   ========================================================= */
+
+/* 其他页面的统一内容宽度（music/movies/books/...） */
+.page-standard {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 80px 24px 40px;
+}
+
+/* 如果页面 body 上不含 home-page，则自动使用窄版布局 */
+body:not(.home-page) .panel,
+body:not(.home-page) .stack,
+body:not(.home-page) .page {
+    width: 100%;
+    height: auto;
+    position: static;
+    scroll-snap-type: none;
+}
+
+/* 禁用非首页的 sticky 全屏特性 */
+body:not(.home-page) .panel {
+    display: block;
+    height: auto;
+    padding: 0;
+    background: none;
+}
+
+/* 非首页移除 overlay */
+body:not(.home-page) .panel::before {
+    display: none;
+}
+
+/* 非首页正文容器样式（你以后所有内容写进这个容器里） */
+body:not(.home-page) .content-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 让 grid-cards 在非首页保持正常宽度，不铺满全屏 */
+body:not(.home-page) .grid-cards {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* Hero 在非首页也居中、固定宽度 */
+body:not(.home-page) .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px 20px;
+}
+
+/* Inline section images */
+.section-image {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 20px 0;
+    border-radius: 16px;
+    height: auto;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+/* 让 hero 里的 h1 永远最大 */
+.music-page .hero h1 {
+    font-size: 4.8rem !important;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* 让 section 里的 h2 比 h1 小一档 */
+.music-page h2 {
+    font-size: 3.8rem !important;
+    font-weight: 600;
+    margin-bottom: 6px;
 }

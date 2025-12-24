@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Shows | Chase Cui</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<!-- tv 页面：触发窄版布局 -->
+
+<body class="tv-page">
+    <header class="nav">
+        <a class="brand" href="index.html#top">Chase</a>
+        <nav class="menu">
+            <a href="music.html">Music</a>
+            <a href="movies.html">Movies</a>
+            <a href="tv.html">TV</a>
+            <a href="books.html">Books</a>
+            <a href="travels.html">Travels</a>
+            <a href="career.html">Career</a>
+        </nav>
+        <a class="contact-btn" href="contact.html">Contact</a>
+    </header>
+
+    <div class="content-wrapper">
+
+        <!-- Hero 区：TV 页面标题 + intro -->
+        <section class="hero">
+            <h1>TV Shows</h1>
+            <p>
+                Series I’m watching, rewatching, or emotionally attached to. From comfort sitcoms to intense dramas.
+            </p>
+        </section>
+
+        <!-- Section 1：Currently Watching -->
+        <section class="content-section" id="currently-watching">
+            <h2>Currently Watching</h2>
+            <p>
+                Shows I’m following right now – weekly drops, new seasons, or something I finally picked up.
+            </p>
+
+            <div class="grid-cards">
+                <!-- 占位示例卡片：之后你可以换成 poster -->
+                <article class="card">
+                    <img class="card__img" src="images/tv-placeholder-1.jpg" alt="TV show poster">
+                    <div class="card__body">
+                        <h3 class="card__title">Show Title One</h3>
+                        <p class="card__meta">Season 3 · Drama</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="images/tv-placeholder-2.jpg" alt="TV show poster">
+                    <div class="card__body">
+                        <h3 class="card__title">Show Title Two</h3>
+                        <p class="card__meta">Season 1 · Comedy</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__img" src="images/tv-placeholder-3.jpg" alt="TV show poster">
+                    <div class="card__body">
+                        <h3 class="card__title">Show Title Three</h3>
+                        <p class="card__meta">Limited Series · Thriller</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2：All-time Favorites -->
+        <section class="content-section" id="favorite-shows">
+            <h2>All-time Favorites</h2>
+            <p>
+                Series I’ve rewatched more than once – comfort shows, iconic storylines, or characters I never forget.
+            </p>
+
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Comfort Sitcom</h3>
+                        <p class="card__meta">
+                            A show I can put on anytime – calming, funny, and familiar.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Drama Classic</h3>
+                        <p class="card__meta">
+                            A series with unforgettable performances and storytelling that sticks.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Reality TV Obsession</h3>
+                        <p class="card__meta">
+                            The kind of show I binge in one weekend and then force friends to watch.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Emotional Masterpiece</h3>
+                        <p class="card__meta">
+                            Slow, thoughtful, beautifully written – something that stays with me afterward.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 3：Watchlist -->
+        <section class="content-section" id="tv-watchlist">
+            <h2>Watchlist</h2>
+            <p>
+                Shows I’ve been meaning to start, or next in line once I finish my current list.
+            </p>
+
+            <ul class="pill-links">
+                <li><a href="#">Show on my radar #1</a></li>
+                <li><a href="#">Show on my radar #2</a></li>
+                <li><a href="#">Show on my radar #3</a></li>
+                <li><a href="#">Show on my radar #4</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 4：TV Recommendations -->
+        <section class="content-section" id="tv-recommend">
+            <div class="recommend">
+                <h2>Recommend a show to me</h2>
+                <p>
+                    If there’s a series you absolutely think I should watch, feel free to send it in.
+                </p>
+
+                <form id="recommendForm">
+                    <input type="text" name="name" placeholder="Your name (optional)" />
+                    <input type="text" name="show" placeholder="TV show title (required)" required />
+                    <textarea name="reason" placeholder="Why do you think I'd like it?"></textarea>
+                    <button type="submit">Send recommendation</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
